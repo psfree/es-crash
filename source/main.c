@@ -31,7 +31,7 @@ int copyFile(FILE * ip, FILE * op) {
 		fwrite(buffer, bufsz, 1, op);
 		iter++;
 	}
-	return 0;
+	return 1;
 }
 
 
@@ -44,6 +44,7 @@ int dumpCommon() {
         return 0;
     }
     else {
+    	printf("Dumping Common\n");
     	if (fsdevMountDevice("boymodedab", g_activeFs) == -1) 
     	{
         	printf("error mounting save data \n");
@@ -81,6 +82,7 @@ int dumpPersonal () {
         return 0;
     }
     else {
+    	printf("Dumping Personal\n");
     	if (fsdevMountDevice("2168", g_activeFs) == -1) 
     	{
         	printf("error mounting save data \n");
@@ -118,6 +120,7 @@ int dumpUnknown () {
         return 0;
     }
     else {
+    	printf("Dumping unknown\n");
     	if (fsdevMountDevice("calypso", g_activeFs) == -1) 
     	{
         	printf("error mounting save data \n");
